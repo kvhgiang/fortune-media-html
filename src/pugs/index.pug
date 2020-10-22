@@ -1,0 +1,98 @@
+//- include partials/item-single-image.pug
+include partials/item-slider.pug
+include partials/item-video.pug
+
+include partials/tab-pane.pug
+
+
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    link(rel="stylesheet", href="./assets/css/style.css")
+  body
+    .container
+      header.row.align-items-center.justify-content-center
+        .col-md-4.col-xl-3
+          .logo.text-center.text-md-left
+            a(href='javascript:;')
+              img(src='./assets/images/logo.png')
+        .col-md-8.col-xl-6
+          .d-flex.align-items-center.flex-column.flex-lg-row
+            h1.h1 fortunemedia.asia
+            .d-flex.align-items-center
+              span.icon.verified.mx-2
+              button.btn.btn-outline-white.mx-1 message
+              button.btn.btn-outline-white.btn-icon.mx-1 
+                i.icon.location
+              .dropdown
+                button#menuMore.btn.btn-outline-white.btn-icon.mx-1.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  span.icon.caret-down
+                .dropdown-menu(aria-labelledby='menuMore')
+                  a.dropdown-item(href='#') Action
+                  a.dropdown-item(href='#') Another action
+                  a.dropdown-item(href='#') Something else here
+              .dropdown
+                button#menuMore.btn.btn-outline-0.btn-icon.mx-1.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  span.icon.more
+                .dropdown-menu(aria-labelledby='menuMore')
+                  a.dropdown-item(href='#') Action
+                  a.dropdown-item(href='#') Another action
+                  a.dropdown-item(href='#') Something else here
+          .d-flex.justify-content-between.my-4
+            .item.text-center
+              b 123+ 
+              span clients
+            .item.text-center
+              b 300+ 
+              span campaigns
+            .item.text-center
+              b 100+
+              span million reach
+          p.font-weight-bold.mb-0 Fortune Media
+          p.text-justify Creative Digital Agency #[br]Vietnamese Root. Global Footprint.#[br]hello@fortunemedia.asia#[br](+84) 28 66 838 988
+
+    
+      nav.sticky-top.border-top.bg-white.mx-md-n3
+        ul.nav.justify-content-md-center.flex-nowrap.text-nowrap
+          li.nav-item
+            a.nav-link.active(data-toggle="tab" href="#home") HOME
+          li.nav-item
+            a.nav-link(data-toggle="tab" href="#about-us") ABOUT US
+          li.nav-item
+            a.nav-link(data-toggle="tab" href="#services") OUR SERVICES
+          li.nav-item
+            a.nav-link(data-toggle="tab" href="#saved-works") SAVED WORKS
+          li.nav-item
+            a.nav-link(data-toggle="tab" href="#tagged-media") TAGGED MEDIA
+
+
+      main
+        .tab-content
+          +tabPane('home', GRID_ITEM, true)
+          +tabPane('about-us', GRID_ITEM.filter(function(item) { return item.tabNum == 2 }))
+          +tabPane('services', GRID_ITEM.filter(function(item) { return item.tabNum == 3 }))
+          +tabPane('saved-works', GRID_ITEM.filter(function(item) { return item.tabNum == 4 }))
+          +tabPane('tagged-media', GRID_ITEM.filter(function(item) { return item.tabNum == 5 }))
+
+    #modalZoomInGallery.modal.fade(tabindex='-1' role='dialog' aria-labelledby='modalZoomInGallery' aria-hidden='true')
+      .modal-dialog.modal-full-screen(role='document')
+        .modal-content
+          .modal-header
+            h5#modalZoomInGallery.modal-title Gallery
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') &times;
+          .modal-body
+            #gallery-wrapper.text-center
+
+
+
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    script(src="./node_modules/slick-carousel/slick/slick.min.js")
+    script(src="./assets/js/script.js")

@@ -1,0 +1,38 @@
+#gallery-wrapper {
+  img {
+    max-width: 100%;
+    max-height: 90vh;
+    margin: 0 auto;
+  }
+
+  .slick-arrow {
+    font-size: 0;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #777;
+    border-bottom: 0;
+    border-right: 0;
+    opacity: .7;
+    transition: ease-in-out .3s;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    &:hover {
+      opacity: 1;
+    }
+    &.slick-prev {
+      left: 2.5rem;
+      transform: translate(-50%) rotate(-45deg);
+    }
+    &.slick-next {
+      right: 0;
+      transform: translate(-50%) rotate(135deg);
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+}

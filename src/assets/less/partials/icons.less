@@ -1,0 +1,30 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  &::before {
+    .font('fontello', 24px, normal, normal);
+
+  }
+  &.verified::before {
+    content:'\e801';
+    color: #459ae5;
+  }
+  &.more::before {
+    content: '\e803'
+  }
+  &.caret-down::before {
+    content:'\e804';
+    font-size: 0.8rem!important;
+  }
+  &.location::before {
+    content:'\e800'    
+  }
+  &.gallery::before {
+    content:'\e806';
+    color: #fff;
+  }
+  &.video::before {
+    content:'\e805';
+    color: #fff;
+  }
+}

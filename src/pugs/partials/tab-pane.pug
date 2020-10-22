@@ -1,0 +1,14 @@
+mixin tabPane(id, list, isActive)
+  .tab-pane(class=isActive?'active':'' id=id)
+    .row.grid
+      each item in list
+        .col-4
+          .grid-item(data-toggle='modal' data-target='#modalZoomInGallery')
+            if item.isVideo
+              +itemVideo(item.props)
+            //- else if !item.isVideo && item.props.listImages == 1
+            //-   +itemSingleImage(item.props.listImages[0])
+            else
+              +itemSlider(item.props.listImages)
+    .text-center.my-5
+      .lds-hourglass

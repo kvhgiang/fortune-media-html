@@ -1,0 +1,40 @@
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 13px;
+  }
+  .h1 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {  
+  .logo img {
+    max-width: 225px;
+    max-height: 226px;
+  }
+
+  .grid {
+    margin-left: -2px;
+    margin-right: -2px;
+    [class^='col-'] {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+  .grid-item {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    .icon {
+      right: 10px;
+      &::before {
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1300px;
+  }
+}
