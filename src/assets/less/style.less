@@ -11,15 +11,22 @@
 @import 'partials/button';
 @import 'partials/modal';
 @import 'partials/gallery';
-@import 'partials/responsive';
+@import 'partials/statistic';
 
 body {
-  .font('SegoeUI', 16px, normal, normal);
+  .font('SegoeUI', 22px, normal, normal);
+  line-height: 31.75px;
+  background-color: #fafafa;
 }
 
 header {
-  padding-top: 2.5rem;
+  padding-top: 3rem;
   padding-bottom: 2rem;
+  h1 {
+    margin-top: 5px;
+    line-height: 1;
+    margin-bottom: 0;
+  }
 }
 
 .logo img {
@@ -27,6 +34,9 @@ header {
   max-height: 169px;
 }
 
+
 #fancy-block, #fancy-block  * {
   box-sizing: content-box;
 }
+
+@import 'partials/responsive';
