@@ -14,18 +14,37 @@
 @import 'partials/statistic';
 
 body {
-  .font('SegoeUI', 22px, normal, normal);
-  line-height: 31.75px;
+  .font('SegoeUI', 1.25rem, normal, normal);
+  line-height: 2rem;
   background-color: #fafafa;
+}
+
+b {
+  font-weight: 600;
+}
+
+.container {
+  padding: 0;
 }
 
 header {
   padding-top: 3rem;
   padding-bottom: 2rem;
+  &.row {
+    margin: 0;
+  }
   h1 {
     margin-top: 5px;
     line-height: 1;
     margin-bottom: 0;
+  }
+  .icon {
+    &.verified {
+      color: #3897f0;
+    }
+    &.caret-down::before {
+      font-size: 1.25rem;
+    }
   }
 }
 

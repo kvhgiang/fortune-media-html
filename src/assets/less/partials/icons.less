@@ -3,11 +3,15 @@
   vertical-align: middle;
   &::before {
     .font('fontello', 24px, normal, normal);
-
+  }
+  &.location::before {
+    content:'\e800'    
   }
   &.verified::before {
     content:'\e801';
-    color: #459ae5;
+  }
+  &.gallery::before {
+    content:'\e802';
   }
   &.more::before {
     content: '\e803'
@@ -15,15 +19,7 @@
   &.caret-down::before {
     content:'\e804';
   }
-  &.location::before {
-    content:'\e800'    
-  }
-  &.gallery::before {
-    content:'\e802';
-    color: #fff;
-  }
   &.video::before {
     content:'\e806';
-    color: #fff;
   }
 }

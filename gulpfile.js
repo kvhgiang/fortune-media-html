@@ -212,6 +212,6 @@ gulp.task('html', function() {
 });
 
 
-gulp.task('build', gulp.series(gulp.parallel('clean:tmp', 'clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs'), 'less', 'pug:data', 'html'));
+gulp.task('build', gulp.series('less', gulp.parallel('clean:tmp', 'clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs'), 'pug:data', 'html'));
 
 gulp.task('default', gulp.series('pug:data', gulp.parallel('pug', 'less'), gulp.parallel('browsersync', 'watch')));
